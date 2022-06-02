@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "mullvadi"
+version = "0.1.0"
+description = ""
+authors = ["h0ldnack <github@mail.holdnack.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = {extras = ["all"], version = "^0.4.1"}
+rich = {extras = ["all"], version = "^12.4.4"}
+uvloop = "^0.16.0"
+httpx = "^0.23.0"
+icmplib = "^3.0.3"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

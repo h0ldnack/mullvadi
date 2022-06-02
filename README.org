@@ -1,0 +1,31 @@
+* A tool for managing Mullvad wireguard
+** About
+Focused on providing high-level
+Most commands require running as root
+Only tested on Linux, but probably works on other Unix-likes
+** Functions
+*** Rotate
+Brings down the current tunnel, choose a new different config and brings it up
+*** Up and Down
+Wraps wg-quick, so the same as that
+*** Is_up
+Checks if a wireguard connection is active
+*** Filter_vpn | Check vpn perf
+Filters out vpn's by various connection metrics
+Used to provide a baseline perf for partially random get_random_config
+*** Get_random_config
+Does exactly what it says with one exception
+When 'fully_rand' parameter is set to 'False', it chooses randomly from vpns filtered for a baseline perf
+* Current Status
+It Works, but that's it
+I'd like to add a few things to get it to what I consider good
+- [ ] Way to make running cmds with root less annoying
+- [ ] See if there are lower level cmds then wg-quick I can use
+- [ ] Add function to get all wireguard configs with just an account number
+- [ ] Write a service script that runs 'rotate' at set time intervals
+- [ ] Test with mypy and write a few tests for the bigger functions
+- [ ] Implement caching for some of the functions that pull remote data
+- [ ] Reimplement cli interface with pre-existing library
+  I just need to find one I actually like
+  
+Once those are all finished and a final polish, I'll add it to pypi.
